@@ -130,7 +130,7 @@ public class Player : MonoBehaviour, IDamagable
     {
         IsMoving = true;
 
-        if (Physics.Raycast(transform.position + new Vector3(dir.x, 0, dir.y), Vector3.down, 100f, GroundLayer))
+        if (Physics.Raycast(transform.position + new Vector3(dir.x, 0, dir.y), Vector3.down, 1f, GroundLayer))
         {
             transform.DOMove(transform.position + new Vector3(dir.x, 0, dir.y), moveSec).SetEase(Ease.InOutQuad).onComplete += () =>
                 Timer(Bpm._beatIntervalD8Sec * 3, () => IsMoving = false);
