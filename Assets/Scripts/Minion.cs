@@ -43,7 +43,8 @@ public class Minion : MonoBehaviour
 
     IEnumerator DoDie()
     {
-        DeathParticle.Play();
+        var parti = Instantiate(DeathParticle, transform.position, Quaternion.identity);
+        parti.Play();
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         yield return new WaitForSeconds(1f);

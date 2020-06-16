@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.InputSystem;
 using System;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IDamagable
 {
@@ -20,10 +21,12 @@ public class Player : MonoBehaviour, IDamagable
     private bool IsComboZone;
     private int CurrentComboBeat = 0;
     public LayerMask GroundLayer;
+    public LayerMask EnemyLayer;
 
     //status
     public int HP { get; set; } = 100;
     private int Combo = 0;
+    public Text ComboText;
 
     //Events
     public static Action InputStart;
@@ -60,6 +63,10 @@ public class Player : MonoBehaviour, IDamagable
             Excute();
         }
     }
+    public void OnRewind(InputAction.CallbackContext context)
+    {
+        Rewind();
+    }
     private void OnEnable()
     {
         BPM_Counter.OnBeatFull += ScalePop;
@@ -83,6 +90,8 @@ public class Player : MonoBehaviour, IDamagable
         {
             InputEnd?.Invoke();
         }
+
+        ComboText.text = Combo.ToString();
     }
     private void Excute()
     {
@@ -158,7 +167,7 @@ public class Player : MonoBehaviour, IDamagable
     }
     public void Attack()
     {
-        if (Combo != 0)
+        if (Combo != 0 && Physics.Raycast(transform.position, new Vector3(InputDir.x, 0, InputDir.y), 999f, EnemyLayer))
         {
             PlayerAttack.Attack();
         }

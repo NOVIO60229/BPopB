@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -168,8 +168,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 12
-      minScalar: 8
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1371,8 +1371,8 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.628757, g: 0.73333335, b: 0.20392157, a: 0}
-        key1: {r: 0.62476945, g: 0.9056604, b: 0.2007832, a: 1}
-        key2: {r: 0.48618084, g: 0.5566038, b: 0.128649, a: 1}
+        key1: {r: 0.90588236, g: 0.893917, b: 0.19999996, a: 1}
+        key2: {r: 1, g: 0.67145586, b: 0, a: 1}
         key3: {r: 0.20754719, g: 0.19286224, b: 0.18698826, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -4869,7 +4869,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5069,7 +5069,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -6137,8 +6137,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.628757, g: 0.73333335, b: 0.20392157, a: 1}
-        key1: {r: 0.9002958, g: 0.9622642, b: 0.8033998, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 0.92357296, b: 0.7971698, a: 1}
         key2: {r: 0.9372438, g: 0.9528302, b: 0.85844606, a: 1}
         key3: {r: 0.9372438, g: 0.9528302, b: 0.85844606, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -9615,7 +9615,7 @@ Transform:
   m_GameObject: {fileID: 4397334591890123670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4397334590603829687}
   - {fileID: 682587256577421804}
@@ -9640,7 +9640,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -14394,7 +14394,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -19206,7 +19206,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
