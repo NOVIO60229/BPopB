@@ -24,9 +24,12 @@ public class Player : MonoBehaviour, IDamagable
     public LayerMask EnemyLayer;
 
     //status
+    private bool IsHurt = false;
     public int HP { get; set; } = 100;
     private int Combo = 0;
     public Text ComboText;
+    public Text HPText;
+
 
     //Events
     public static Action InputStart;
@@ -92,6 +95,7 @@ public class Player : MonoBehaviour, IDamagable
         }
 
         ComboText.text = Combo.ToString();
+        HPText.text = HP.ToString();
     }
     private void Excute()
     {
@@ -215,7 +219,30 @@ public class Player : MonoBehaviour, IDamagable
 
     public void Hurt(int damage)
     {
+        StartCoroutine(DoHurt(damage, 0.3f));
+    }
+
+    IEnumerator DoHurt(int damage, float sec)
+    {
+        if (IsHurt) yield break;
+        IsHurt = true;
         HP -= damage;
+
+        var endTime = Time.time + sec;
+        while (Time.time < endTime)
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+            yield return new WaitForSeconds(0.05f);
+            GetComponent<MeshRenderer>().enabled = true;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        IsHurt = false;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Hurt(5);
     }
 
     public void Timer(float time, Action EndOperation)
